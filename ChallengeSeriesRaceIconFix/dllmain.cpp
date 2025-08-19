@@ -37,19 +37,16 @@ char __stdcall DetourGetChallengeEventIcon(unsigned int* EventIconHash, unsigned
 
     // 检查当前的哈希值是否为上文所定义的挑战赛 1
     if (ChallengeHash == CUSTOM_CHALLENGE_HASH_1) {
-        printf("Hook activated! Forcing icon for hash: 0x%X to Pursuit icon.\n", ChallengeHash);
         *EventIconHash = CHALLENGERACE_ICON_HASH_1; // 使用 CHALLENGERACE_ICON_HASH_1 图标
         return 1;
     }
     // 检查当前的哈希值是否为上文所定义的挑战赛 2
     else if (ChallengeHash == CUSTOM_CHALLENGE_HASH_2) {
-        printf("Hook activated! Forcing icon for hash: 0x%X to Racewars icon.\n", ChallengeHash);
         *EventIconHash = CHALLENGERACE_ICON_HASH_2; // 使用 CHALLENGERACE_ICON_HASH_2 图标
         return 1;
     }
     // 检查当前的哈希值是否为上文所定义的挑战赛 3
     else if (ChallengeHash == CUSTOM_CHALLENGE_HASH_3) {
-        printf("Hook activated! Forcing icon for hash: 0x%X to Tradepaint icon.\n", ChallengeHash);
         *EventIconHash = CHALLENGERACE_ICON_HASH_3; // 使用 CHALLENGERACE_ICON_HASH_3 图标
         return 1;
     }
@@ -61,27 +58,15 @@ char __stdcall DetourGetChallengeEventIcon(unsigned int* EventIconHash, unsigned
 
 // 初始化 Hook
 void InitializeHook() {
-    AllocConsole();
-    FILE* pDummyFile;
-    if (freopen_s(&pDummyFile, "CONOUT$", "w", stdout) != 0) {
-        return;
-    }
-    printf("ASI Plugin: Starting initialization...\n");
-
     if (MH_Initialize() != MH_OK) {
-        printf("MinHook initialization failed.\n");
         return;
     }
     LPVOID pTarget = (LPVOID)0x004AA3F0;
     if (MH_CreateHook(pTarget, DetourGetChallengeEventIcon, (LPVOID*)&fpOriginalGetChallengeEventIcon) != MH_OK) {
-        printf("Hook creation failed.\n");
         return;
     }
     if (MH_EnableHook(pTarget) != MH_OK) {
-        printf("Hook enable failed.\n");
-    }
-    else {
-        printf("ASI Plugin: Hook enabled successfully at 0x%p\n", pTarget);
+        return;
     }
 }
 
