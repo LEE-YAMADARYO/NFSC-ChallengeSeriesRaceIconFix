@@ -20,7 +20,7 @@ const unsigned int CHALLENGERACE_ICON_HASH_2 = 0x00000000;<br>
 const 无符号 int CHALLENGERACE_ICON_HASH_3 = 0x00000000;<br>
 
 对于图标哈希值，您可以在 Binary 中查看图标的哈希值，其中 BinKey 即为它们的哈希值<br>
-对于挑战赛哈希值，您可以通过我的[NFSC-GetChallengeSeriesRaceHash]([链接URL](https://github.com/LEE-YAMADARYO/NFSC-GetChallengeSeriesRaceHash))解决方案获取<br>
+对于挑战赛哈希值，您可以通过我的[](https://github.com/LEE-YAMADARYO/NFSC-GetChallengeSeriesRaceHash)解决方案获取<br>
 
 在 char __stdcall DetourGetChallengeEventIcon 函数中，您则可以直接定义您所添加的挑战赛调用的图标<br>
 
