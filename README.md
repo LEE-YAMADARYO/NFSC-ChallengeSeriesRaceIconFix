@@ -10,14 +10,14 @@
 在代码开始的常量定义中，您可以找到对于挑战赛图标以及挑战赛本身的哈希值定义<br>
 
 例如：<br>
-const unsigned int CUSTOM_CHALLENGE_HASH_1 = 0x00000000;<br>
-const 无符号 int CUSTOM_CHALLENGE_HASH_2 = 0x00000000;<br>
-常量无符号 int CUSTOM_CHALLENGE_HASH_3 = 0x00000000;<br>
+const unsigned int CUSTOM_CHALLENGE_HASH_1 = 0x00000000;
+const unsigned int CUSTOM_CHALLENGE_HASH_2 = 0x00000000;
+const unsigned int CUSTOM_CHALLENGE_HASH_3 = 0x00000000;
 
 以及：<br>
-const unsigned int CHALLENGERACE_ICON_HASH_1 = 0x00000000;<br>
-const unsigned int CHALLENGERACE_ICON_HASH_2 = 0x00000000;<br>
-const 无符号 int CHALLENGERACE_ICON_HASH_3 = 0x00000000;<br>
+const unsigned int CHALLENGERACE_ICON_HASH_1 = 0x00000000;
+const unsigned int CHALLENGERACE_ICON_HASH_2 = 0x00000000;
+const unsigned int CHALLENGERACE_ICON_HASH_3 = 0x00000000;
 
 对于图标哈希值，您可以在 Binary 中查看图标的哈希值，其中 BinKey 即为它们的哈希值<br>
 您可以通过我的 https://github.com/LEE-YAMADARYO/NFSC-GetChallengeSeriesRaceHash ASI 获取挑战赛哈希<br>
